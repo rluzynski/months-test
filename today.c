@@ -40,20 +40,36 @@ void main()
     printf ("Today (%%B): %s\n", buf);
     strftime (buf, 100, "%d %OB %Y", &tm);
     printf ("Today (%%OB): %s\n", buf);
+    strftime (buf, 100, "%d %b %Y", &tm);
+    printf ("Today (%%b): %s\n", buf);
+    strftime (buf, 100, "%d %Ob %Y", &tm);
+    printf ("Today (%%Ob): %s\n\n", buf);
 
     wcsftime (wbuf, 100, L"%d %B %Y", &tm);
     printf ("Today (wide char, %%B): %ls\n", wbuf);
     wcsftime (wbuf, 100, L"%d %OB %Y", &tm);
     printf ("Today (wide char, %%OB): %ls\n", wbuf);
+    wcsftime (wbuf, 100, L"%d %b %Y", &tm);
+    printf ("Today (wide char, %%b): %ls\n", wbuf);
+    wcsftime (wbuf, 100, L"%d %Ob %Y", &tm);
+    printf ("Today (wide char, %%Ob): %ls\n\n", wbuf);
 
     __strftime_l (buf, 100, "%d %B %Y", &tm, loc);
     printf ("Today (__strftime_l, %%B): %s\n", buf);
     __strftime_l (buf, 100, "%d %OB %Y", &tm, loc);
     printf ("Today (__strftime_l, %%OB): %s\n", buf);
+    __strftime_l (buf, 100, "%d %b %Y", &tm, loc);
+    printf ("Today (__strftime_l, %%b): %s\n", buf);
+    __strftime_l (buf, 100, "%d %Ob %Y", &tm, loc);
+    printf ("Today (__strftime_l, %%Ob): %s\n\n", buf);
 
     __wcsftime_l (wbuf, 100, L"%d %B %Y", &tm, loc);
     printf ("Today (__wcsftime_l, wide char, %%B): %ls\n", wbuf);
     __wcsftime_l (wbuf, 100, L"%d %OB %Y", &tm, loc);
     printf ("Today (__wcsftime_l, wide char, %%OB): %ls\n", wbuf);
+    __wcsftime_l (wbuf, 100, L"%d %b %Y", &tm, loc);
+    printf ("Today (__wcsftime_l, wide char, %%b): %ls\n", wbuf);
+    __wcsftime_l (wbuf, 100, L"%d %Ob %Y", &tm, loc);
+    printf ("Today (__wcsftime_l, wide char, %%Ob): %ls\n", wbuf);
 
 }

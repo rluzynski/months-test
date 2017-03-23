@@ -69,11 +69,19 @@ void main()
     array_char(MON_1);
     printf("\nMonths (alternative)\n");
     array_char(_NL_TIME_CODESET + 1);   /* ALTMON_1 */
+    printf("\nMonths (abbreviated)\n");
+    array_char(ABMON_1);
+    printf("\nMonths (abbreviated alternative)\n");
+    array_char(_NL_TIME_CODESET + 25);   /* _NL_ABALTMON_1 */
 
     printf("\nMonths (wide char)\n");
     array_wchar(_NL_WMON_1);
     printf("\nMonths (wide alternative)\n");
     array_wchar(_NL_TIME_CODESET + 13);   /* _NL_WALTMON_1 */
+    printf("\nMonths (wide abbreviated)\n");
+    array_wchar(_NL_WABMON_1);
+    printf("\nMonths (wide abbreviated alternative)\n");
+    array_wchar(_NL_TIME_CODESET + 37);   /* _NL_WABALTMON_1 */
 
     printf("\nAlso compare __nl_langinfo_l():\n");
     print_char(1, __nl_langinfo_l(MON_1, loc));
@@ -85,4 +93,16 @@ void main()
     print_char(2, __nl_langinfo_l(_NL_TIME_CODESET + 2, loc));
     print_char(3, __nl_langinfo_l(_NL_TIME_CODESET + 3, loc));
     print_char(4, __nl_langinfo_l(_NL_TIME_CODESET + 4, loc));
+    printf("\nAlso compare __nl_langinfo_l() (abbreviated):\n");
+    print_char(1, __nl_langinfo_l(ABMON_1, loc));
+    print_char(2, __nl_langinfo_l(ABMON_2, loc));
+    print_char(3, __nl_langinfo_l(ABMON_3, loc));
+    print_char(4, __nl_langinfo_l(ABMON_4, loc));
+    print_char(5, __nl_langinfo_l(ABMON_5, loc));
+    printf("\nAlso compare __nl_langinfo_l() (abbreviated alternative):\n");
+    print_char(1, __nl_langinfo_l(_NL_TIME_CODESET + 25, loc));
+    print_char(2, __nl_langinfo_l(_NL_TIME_CODESET + 26, loc));
+    print_char(3, __nl_langinfo_l(_NL_TIME_CODESET + 27, loc));
+    print_char(4, __nl_langinfo_l(_NL_TIME_CODESET + 28, loc));
+    print_char(5, __nl_langinfo_l(_NL_TIME_CODESET + 29, loc));
 }
